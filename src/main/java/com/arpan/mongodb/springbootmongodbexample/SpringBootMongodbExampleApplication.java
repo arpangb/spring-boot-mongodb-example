@@ -16,13 +16,9 @@ public class SpringBootMongodbExampleApplication {
 
 	@Bean
 	CommandLineRunner commandLineRunner(UserRepository userRepository){
-		return new CommandLineRunner() {
-			@Override
-			public void run(String... args) throws Exception {
-				userRepository.insert(new User(3, "abhishek","amsterdam"));
-				userRepository.insert(new User(4, "pradip", "kolkata"));
-			}
-		};
+		return sys -> {
+			userRepository.insert(new User(1, "arpan","monte alban 173"));
+			userRepository.insert(new User(2, "poulomi", "zempoala 275"));};
 
 	}
 
